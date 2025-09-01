@@ -9,8 +9,8 @@ import type { AppDispatch, RootState } from "../store/store";
 const WatchList = () => {
     const [showModal, setShowModal] = useState(false);
     const [tokens, setTokens] = useState<Token[]>([]);
-    const [trending, setTrending] = useState<Token[]>([]);
-    const [searchTerm, setSearchTerm] = useState("");
+    // const [trending, setTrending] = useState<Token[]>([]);
+    // const [searchTerm, setSearchTerm] = useState("");
     const [selectedToken, setSelectedToken] = useState<Token[]>([]);
     const [isDisabled, setIsDisabled] = useState(true);
 
@@ -46,22 +46,22 @@ const WatchList = () => {
     useEffect(() => {
         if (!showModal) return;
 
-        const fetchTrending = async () => {
-            try {
-                const res = await fetch("https://api.coingecko.com/api/v3/search/trending");
-                const data = await res.json();
-                const trendTokens = data.coins.map((c: any) => ({
-                    id: c.item.id,
-                    name: c.item.name,
-                    symbol: c.item.symbol,
-                    image: c.item.small,
-                }));
-                setTrending(trendTokens);
-            } catch (error) {
-                console.error("Trending fetch error:", error);
-                setTrending([]);
-            }
-        };
+        // const fetchTrending = async () => {
+        //     try {
+        //         const res = await fetch("https://api.coingecko.com/api/v3/search/trending");
+        //         const data = await res.json();
+        //         const trendTokens = data.coins.map((c: any) => ({
+        //             id: c.item.id,
+        //             name: c.item.name,
+        //             symbol: c.item.symbol,
+        //             image: c.item.small,
+        //         }));
+        //         setTrending(trendTokens);
+        //     } catch (error) {
+        //         console.error("Trending fetch error:", error);
+        //         setTrending([]);
+        //     }
+        // };
 
         const fetchTokens = async () => {
             try {
@@ -84,7 +84,7 @@ const WatchList = () => {
             }
         };
 
-        fetchTrending();
+        // fetchTrending();
         fetchTokens();
     }, [showModal]);
 
