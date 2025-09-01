@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+body {
+    background-color: #212124;
+    color: #a1a1aa;
+    /* font-family: ; */
+}
+
+button {
+    cursor: pointer;
+}
+
+.section-scrollbar::-webkit-scrollbar {
+    width: 4px; /* vertical scrollbar thickness */
+    height: 9px; /* horizontal scrollbar height */
+}
+
+.section-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.section-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #ffffff1a;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+}
+
+/* Firefox */
+.section-scrollbar {
+    scrollbar-width: thin; /* affects vertical scrollbar width */
+    scrollbar-color: #ffffff1a transparent;
+}
+
+.section-scrollbar::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
