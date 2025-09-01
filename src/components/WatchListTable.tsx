@@ -43,7 +43,7 @@ type WatchListTableProps = {
     onEditHoldingsClick: (token: Token) => void;
 };
 
-const Sparkline = ({ prices }: { prices: number[] }) => {
+const Sparkline = ({ }: { prices: number[] }) => {
     return <div className="w-20 h-6 bg-gray-700 rounded select-none">Sparkline</div>;
 };
 
@@ -205,10 +205,10 @@ const WatchListTable: React.FC<WatchListTableProps> = ({
         getCoreRowModel: getCoreRowModel(),
     });
     console.log(table.getRowModel(), " this is getrow model of table");
-    const portfolioTotal = React.useMemo(
-        () => watchlist.reduce((acc, token) => acc + token.price * token.holdings, 0),
-        [watchlist]
-    );
+    // const portfolioTotal = React.useMemo(
+    //     () => watchlist.reduce((acc, token) => acc + token.price * token.holdings, 0),
+    //     [watchlist]
+    // );
 
     return (
         <div className="rounded-xl shadow-xl border border-[#FFFFFF14] overflow-auto">
