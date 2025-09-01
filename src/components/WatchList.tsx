@@ -118,11 +118,11 @@ const WatchList = () => {
             <DialogComponent
                 showModal={showModal}
                 onClose={onClose}
-                searchTerm={searchTerm}
-                onSearchChange={setSearchTerm}
+                // searchTerm={searchTerm}
+                // onSearchChange={setSearchTerm}
                 selectedToken={selectedToken}
                 tokens={tokens}
-                trending={trending}
+                // trending={trending}
                 setSelectedToken={setSelectedToken}
                 isDisabled={isDisabled}
                 setIsDisabled={setIsDisabled}

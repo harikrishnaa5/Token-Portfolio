@@ -4,10 +4,10 @@ import type { Token } from "../store/watchListSlice";
 type DialogComponentProps = {
     onClose: () => void;
     showModal: boolean;
-    searchTerm: string;
-    onSearchChange: (term: string) => void;
+    // searchTerm: string;
+    // onSearchChange: (term: string) => void;
     selectedToken: Token[];
-    trending: Token[];
+    // trending: Token[];
     tokens: Token[];
     setSelectedToken: React.Dispatch<React.SetStateAction<Token[]>>;
     isDisabled: boolean;

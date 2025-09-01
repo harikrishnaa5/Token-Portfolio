@@ -1,37 +1,3 @@
-// const WatchListTable = () => {
-//     return (
-//         <div className="rounded-xl shadow-xl border border-[#FFFFFF14] overflow-hidden">
-//             <table className="min-w-full divide-y divide-[#FFFFFF14]">
-//                 <thead className="bg-[#27272A]">
-//                     <tr>
-//                         <th className="px-6 py-3 text-left text-xs">Stock</th>
-//                         <th className="px-6 py-3 text-left text-xs">Price</th>
-//                         <th className="px-6 py-3 text-left text-xs">Change</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody className="py-3">
-//                     <tr className="px-6">
-//                         <td>Etherium</td>
-//                         <td>$.45.000</td>
-//                         <td>67.0%</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-//             {/* Pagination Footer Example */}
-//             <div className="flex justify-between items-center p-4 border-t border-[#FFFFFF14] text-sm">
-//                 <span></span>
-//                 <span className="flex items-center gap-2">
-//                     <button className="py-1 px-2">1 of 10 pages</button>
-//                     <button className="py-1 px-2">Prev</button>
-//                     <button className="py-1 px-2">Next</button>
-//                 </span>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default WatchListTable;
-
 import React, { useState, useRef, useEffect } from "react";
 import { useReactTable, getCoreRowModel, flexRender } from "@tanstack/react-table";
 import type { Token } from "../store/watchListSlice";
@@ -43,7 +9,7 @@ type WatchListTableProps = {
     onEditHoldingsClick: (token: Token) => void;
 };
 
-const Sparkline = ({ }: { prices: number[] }) => {
+const Sparkline = ({}: { prices: number[] }) => {
     return <div className="w-20 h-6 bg-gray-700 rounded select-none">Sparkline</div>;
 };
 
@@ -121,7 +87,6 @@ const WatchListTable: React.FC<WatchListTableProps> = ({
     onRemoveToken,
     onEditHoldingsClick,
 }) => {
-    console.log(watchlist, "watchlist");
     const columns = React.useMemo(
         () => [
             {
@@ -204,7 +169,6 @@ const WatchListTable: React.FC<WatchListTableProps> = ({
         columns,
         getCoreRowModel: getCoreRowModel(),
     });
-    console.log(table.getRowModel(), " this is getrow model of table");
     // const portfolioTotal = React.useMemo(
     //     () => watchlist.reduce((acc, token) => acc + token.price * token.holdings, 0),
     //     [watchlist]
